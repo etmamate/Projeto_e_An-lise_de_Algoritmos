@@ -10,6 +10,7 @@ import sorting.BubbleSort;
 import sorting.HeapSort;
 import sorting.InsertionSort;
 import sorting.MergeSort;
+import sorting.NovoQuickSort;
 import sorting.QuickSort;
 import sorting.SelectionSort;
 
@@ -34,6 +35,13 @@ public class Main {
 
         return null;
 
+    }
+
+    public static Long executaOrdenacao(String pathfile){
+
+
+
+        return null;
     }
 
     public static void main(String[] args) throws Exception {
@@ -105,7 +113,7 @@ public class Main {
                     inicio = System.currentTimeMillis();
                     System.out.println("Realizando a ordenação...");
                     int[] lista_numero_3 = ReadFile.readFile(inputFileName);
-                    QuickSort.sort(lista_numero_3);
+                    NovoQuickSort.sort(lista_numero_3);
                     fim = System.currentTimeMillis();
 
                     System.out.println("Tempo final QuickSort " + (fim - inicio));
