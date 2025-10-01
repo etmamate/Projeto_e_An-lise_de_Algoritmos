@@ -57,5 +57,5 @@ Portanto, o Merge Sort e o Heap Sort são os mais estáveis e confiáveis para g
 
 ### **Funcionamento da Aplicação**
 
-- Ao rodar a aplicação, será solicitado a inserção do arquivo de texto, onde você irá selecionar os arquivos na pasta "/doc" separados diferenciados pela quantidade de números.
-- Ao final de todos o processo de ordenação será gerado um arquivo na pasta "/doc" com os resultados de cara algoritmo de ordenação.
+- Ao rodar a aplicação, será solicitado a inserção do arquivo de texto, onde você irá selecionar os arquivos na pasta `/doc` separados diferenciados pela quantidade de números.
+- Ao final de todos o processo de ordenação será gerado um arquivo na pasta `/doc` com os resultados de cara algoritmo de ordenação.
