@@ -1,3 +1,26 @@
+Trabalho feito por:
+
+Mateus Cristo da Silva & Mikaella Cintra
+
+## **Funcionamento da Aplicação**
+
+- Ao rodar a aplicação, será solicitado a inserção do arquivo de texto, onde você irá selecionar os arquivos na pasta `/doc` separados diferenciados pela quantidade de números. 
+- Ao final de todos o processo de ordenação será gerado um arquivo na pasta `/doc` com os resultados de cara algoritmo de ordenação.
+
+## **Tabela de resultados**
+Função utilizada para medir o tempo de execução:
+
+> System.currentTimeMillis();
+
+| Aleatório c/ Repetição  | 100K | 160K | 220K | 280K | 340K | 400K | 460K | 520K | 580K | 640K | 700K |
+| ----------------------- |:----:|:----:|:----:|:----:|:----:|:----:|:----:|:----:|:----:|:----:|:----:|
+| Bubble Sort             | 44   | 60   | 83   | 108  | 123  | 150  | 180  | 227  | 320  | 344  | 351  |
+| Selection Sort          | 46   | 68   | 79   | 100  | 140  | 149  | 188  | 212  | 320  | 300  | 365  |
+| Quick Sort              | 29   | 43   | 60   | 83   | 51   | 123  | 150  | 180  | 227  | 320  | 348  |
+| Insertion Sort          | 36   | 45   | 50   | 62   | 67   | 70   | 84   | 96   | 123  | 143  | 145  |
+| HeapSort                | 32   | 41   | 46   | 48   | 57   | 62   | 73   | 84   | 93   | 118  | 121  |
+| MergeSort               | 35   | 39   | 46   | 51   | 54   | 64   | 70   | 91   | 104  | 115  | 135  |
+
 ## Resposta das Perguntas
 
 ### **1. Qual algoritmo apresenta melhor desempenho com dados ordenados de forma crescente?**
@@ -55,7 +78,4 @@ Portanto, o Merge Sort e o Heap Sort são os mais estáveis e confiáveis para g
 
 
 
-### **Funcionamento da Aplicação**
 
-- Ao rodar a aplicação, será solicitado a inserção do arquivo de texto, onde você irá selecionar os arquivos na pasta `/doc` separados diferenciados pela quantidade de números.
-- Ao final de todos o processo de ordenação será gerado um arquivo na pasta `/doc` com os resultados de cara algoritmo de ordenação.
