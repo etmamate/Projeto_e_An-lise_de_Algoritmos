@@ -24,57 +24,73 @@ Função utilizada para medir o tempo de execução:
 ## Resposta das Perguntas
 
 ### **1. Qual algoritmo apresenta melhor desempenho com dados ordenados de forma crescente?**
-Resposta: O Insertion Sort e o Bubble Sort.
+Resposta: O Insertion Sort ou o Bubble Sort.
 
-Justificativa:
+**Justificativa:**
 
-Embora a maioria dos algoritmos de alto desempenho opere em O(NlogN), o Insertion Sort e o Bubble Sort são algoritmos adaptativos.   
+Os algoritmos de ordenação mais eficientes para dados já ordenados (ou quase ordenados) são aqueles que são adaptativos, o que significa que seu tempo de execução melhora drasticamente com o nível de pré-ordenação.   
 
-Quando o conjunto de dados já está em ordem crescente (ou quase ordenado), eles atingem sua melhor complexidade de caso: O(N) (Linear).   
+Tanto o Insertion Sort quanto o Bubble Sort possuem a melhor complexidade de caso de O(N) (Linear) quando a entrada está em ordem crescente. Isso significa que o tempo de execução é proporcional apenas ao número de elementos (   
 
-Essa complexidade linear é assintoticamente mais rápida do que O(NlogN) para qualquer N grande. Seu gráfico de tempo para este cenário deve se parecer com uma linha reta, com inclinação muito pequena, tornando-os os mais rápidos para entradas pré-ordenadas.
+N), e não ao fator logN.
+
+Em contraste, Merge Sort, Quick Sort e Heap Sort ainda exigirão pelo menos O(NlogN) mesmo em dados pré-ordenados.
+
+Empiricamente, o Insertion Sort (e ocasionalmente o Bubble Sort se tiver uma flag de otimização) é o algoritmo mais rápido neste cenário.   
 
 ### **2. Qual é o mais eficiente com dados ordenados de forma decrescente?**
-Resposta: O Quick Sort (Otimizado) ou o Merge Sort.
+Resposta: O Merge Sort e o Heap Sort, ou o Quick Sort (Implementado de forma robusta).
 
-Justificativa:
+**Justificativa:**
 
-Dados decrescentes representam o pior caso para o Bubble Sort, Insertion Sort  e, crucialmente, para implementações ingênuas do Quick Sort, levando todos a uma performance de    
+Dados ordenados de forma decrescente (ou inversa) representam o pior caso para:
 
-O(N 
+Algoritmos O(N 
+2
+ ) (Bubble Sort, Insertion Sort, Selection Sort), que levam a O(N 
 2
  ).   
 
-O Merge Sort e o Heap Sort garantem O(NlogN) independentemente da ordem inicial, pois sua estrutura (divisão e conquista ou heap) não é afetada pela pré-ordenação dos dados.   
-
-No entanto, o Quick Sort moderno, se implementado com técnicas de otimização como a Mediana-de-Três para seleção do pivô , evita o pior caso    
-
-O(N 
+Implementações ingênuas do Quick Sort (que levam a O(N 
 2
- ). Empiricamente, o Quick Sort otimizado costuma ser ligeiramente mais rápido que o Merge Sort e o Heap Sort no caso médio/pior, devido à sua menor necessidade de memória auxiliar (é um algoritmo    
+ ) se o pivô for sempre o menor ou maior elemento).   
 
-in-place).   
+Para este cenário, a escolha mais eficiente deve garantir o desempenho O(NlogN):
 
-Portanto, a escolha mais eficiente será um dos três algoritmos O(NlogN) estáveis.
+Merge Sort e Heap Sort: Estes algoritmos garantem O(NlogN) em seu Pior Caso , pois sua lógica estrutural (divisão e conquista, ou construção de    
+
+heap) é independente da ordem inicial dos dados.
+
+Quick Sort: O Quick Sort moderno, se implementado com técnicas robustas como a Mediana-de-Três para seleção de pivô, evita o colapso para O(N 
+2
+ ) e mantém um desempenho próximo a O(NlogN). Quick Sort (quando robusto) é frequentemente o mais rápido na prática devido à sua natureza    
+
+in-place e melhor eficiência de memória (cache).   
 
 ### **3. Qual algoritmo é mais estável em relação ao tempo de execução, independentemente da organização dos dados?**
 Resposta: O Merge Sort e o Heap Sort.
 
-Justificativa:
+**Justificativa:**
 
-A estabilidade temporal (ou consistência) é definida pela baixa variação entre o Melhor Caso, o Caso Médio e o Pior Caso.
+A estabilidade temporal é determinada pela baixa variação na complexidade entre o Melhor Caso, o Caso Médio e o Pior Caso.
 
-Tanto o Merge Sort quanto o Heap Sort mantêm a complexidade O(NlogN) em todos os cenários (Crescente, Decrescente ou Aleatório).   
+O Merge Sort e o Heap Sort são os únicos algoritmos que mantêm consistentemente a complexidade O(NlogN) em todos os cenários (Melhor, Médio e Pior Caso).   
 
-O Quick Sort, apesar de rápido, é inerentemente instável, pois seu pior caso teórico é O(N 
+Em contraste:
+
+Insertion Sort varia de O(N) para O(N 
 2
- ) , mesmo com otimizações, ele ainda é tecnicamente mais arriscado que o Merge Sort ou o Heap Sort.   
+ ).   
 
-O Selection Sort é também estável em termos de tempo, mas de forma negativa: ele é sempre O(N 
+Quick Sort varia de O(NlogN) para O(N 
 2
- ) , o que o torna a pior escolha para desempenho.   
+ ) (Pior Caso).   
 
-Portanto, o Merge Sort e o Heap Sort são os mais estáveis e confiáveis para garantir alto desempenho em qualquer condição de entrada.
+Selection Sort é estável, mas em O(N 
+2
+ ) (proibitivo para escalabilidade).   
+
+Portanto, o Merge Sort e o Heap Sort são os algoritmos que oferecem o tempo de execução mais previsível e consistente, independentemente da distribuição dos dados de entrada.
 
 
 
